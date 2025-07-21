@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rect {
+    height: 250px;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 50px auto;
+    display: flex; /* Flexbox layout for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Keep text and image spaced apart */
+    padding:30px; /* Add spacing inside the rectangle */
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex; /* Flexbox layout to place the panels horizontally */
+    justify-content: space-evenly; /* Space out the panels equally */
+    margin-bottom: 80px; /* Increased space between the upper and lower containers */
+    position: relative; /* Make the container a positioning context for the lines */
+}
+
+/* Default panel styles */
+.panel {
+    height: 600px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(92, 93, 93, 0.2);
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 1s; /* Smooth rotation */
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    position: relative; /* For child elements to position properly */
+}
+
+/* Rotated state */
+.panel.flipped {
+    transform: rotateY(180deg); /* Rotate the panel */
+}
+
+/* Panel back side */
+.panel .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.8); /* Back panel color */
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Hide back side when not flipped */
+    transform: rotateY(180deg); /* Flip the back side */
+    z-index: 2;
+}
+
+/* Front side */
+.panel .front {
+    backface-visibility: hidden; /* Hide front side when flipped */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 2px #1b1b1b, 0 0 2px #1b1b1b, 0 0 5px #bbbaba, 0 0 3px #d4d2d3, 0 0 4px #d4d2d3, 0 0 5px #1b1b1b, 0 0 6px #1b1b1b;
+    }
+    50% {
+        text-shadow: 0 0 5px #1b1b1b, 0 0 5px #1b1b1b, 0 0 5px #bbbaba, 0 0 4px #d4d2d3, 0 0 5px #d4d2d3, 0 0 7px #1b1b1b, 0 0 8px #1b1b1b;
+    }
+    100% {
+        text-shadow: 0 0 2px #1b1b1b, 0 0 2px #1b1b1b, 0 0 5px #bbbabb, 0 0 3px #d4d2d3, 0 0 4px #d4d2d3, 0 0 5px #1b1b1b, 0 0 6px #1b1b1b;
+    }
+}
+
+.glow {
+    font-family: copperplate, sans-serif; /* Use your desired font */
+    font-size: 40px; /* Adjust size as needed */
+    color: white; /* Base color */
+    animation: glow 2s infinite; /* Apply the glow animation */
+}
+
+/* Horizontal line */
+.line.horizontal {
+    width: 80%; /* Adjust the width to your preference */
+    height: 1px; /* Line thickness */
+    background-color: white; /* White line */
+    position: center; /* Position absolutely relative to the nearest positioned ancestor */
+    top: 50%; /* Position in the center vertically */
+    left: 20%; /* Position in the center horizontally */
+    transform: translate(12%, -10%); /* Center the line by adjusting its position */
+    z-index: 1; /* Ensure the line is above the panels */
+}
+
+/* Vertical line */
+.line.vertical {
+    width: 1px; /* Line thickness */
+    height: 1310px;
+    background-color: rgb(208, 208, 208); /* White line */
+    position: absolute;
+    left: 50%; /* Position in the center horizontally */
+    top: 50%;
+    z-index: 1; /* Ensure the line is above the panels */
+}
+
+.bg {
+    height: 200px;
+    width: 100%;
+    background-image: url('file:///Users/yashrajsakunde/Desktop/StocksProject/Elegant-Pattern-PNG-Picture.png'); /* Path to the pattern image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5; /* Slightly fade the background image */
+}
+
+.text {
+    position: relative;
+    z-index: 2;
+    font-size: 80px;
+    font-family: copperplate;
+    color: aliceblue;
+    text-align: center;
+    line-height: 200px; /* Center text vertically within the rect */
+}
+
+.image-container {
+    display: flex; /* Enables flexbox for side-by-side layout */
+    align-items: center; /* Vertically centers the images */
+    gap: 0; /* Removes any gap between the images */
+}
+
+.image, .mirror {
+    height: 150px; /* Increased height for the images */
+    width: 220px; /* Increased width for the images */
+}
+
+.mirror {
+    transform: scaleX(-1); /* Mirror effect for the image */
+}
+
+.circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(220, 224, 225, 0.9); /* Transparent black */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 4px solid rgba(0, 0, 0, 0.7); /* Light border */
+    box-shadow: 0 4px 30px rgba(92, 93, 93, 0.2);
+    position: relative;
+    top: 10px;
+    left: 40px;
+    z-index: 1;
+}
+
+.tag{
+    width: 300px;
+    height: 60px;
+    border-radius: 20px;
+    background: rgba(106, 145, 185, 0.4); /* Transparent black */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 4px solid rgba(0, 0, 0, 0.5); /* Light border */
+    box-shadow: 0 4px 30px rgba(92, 93, 93, 0.2);
+    position: relative;
+    top: -64px;
+    left: 90px;
+}
+
+.perc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgb(50, 150, 80);
+    position: relative;
+    font-size: 30px;
+    top: 23px;
+    left: 13px;
+    z-index: 2;
+}

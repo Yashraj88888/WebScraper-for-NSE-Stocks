@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" initial-scale=1.0>
+<meta http-equiv="refresh" content="1000">
+<html lang="en">
+<head>
+    <title>GW</title>
+</head>
+<body style="height: 100%; width: 100%; background: linear-gradient(to top, rgb(101, 159, 101), rgb(47, 128, 183)); margin-top: 40px; justify-content: center; " >
+    <link rel="stylesheet" href="Stock.css">
+    <div class="rect">
+        
+        <div class="glow" style="align-items: flex-start;
+        margin: 60px;
+        font-size: 80px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(161, 215, 79);font-weight: 550;">Green<p style="color: rgb(248, 248, 248);" >Watchlist</p></div>
+        <div class="image-container">
+            <img src="/Users/yashrajsakunde/Desktop/StocksProject/candlestick-graph-bar-design-stock-market-business-concept-png copy.png" alt="Stock Icon" class="image">
+            <img src="/Users/yashrajsakunde/Desktop/StocksProject/candlestick-graph-bar-design-stock-market-business-concept-png copy.png" alt="Mirror Stock Icon" class="mirror">
+            <img src="/Users/yashrajsakunde/Desktop/StocksProject/candlestick-graph-bar-design-stock-market-business-concept-png copy.png" alt="Stock Icon" class="image">
+        </div>
+</div>
+<div class="line vertical"></div>
+<div class="container">
+    <div class="panel">
+        <div class="circle">
+            <div class="perc">10%
+            </div>
+        </div>
+        <div class="tag"><p style="font-family: copperplate;font-size: 40px;position: relative;top: 8px;left: 60px;">Miracles</p></div>
+    </div>
+    <div class="panel">
+        <div class="circle">
+            <div class="perc" style="left: 20px;">5%
+            </div>
+        </div>
+        <div class="tag"><p style="font-family: copperplate;font-size: 40px;position: relative;top: 8px;left: 65px;">Gainers</p></div>
+    </div>
+    </div>
+</div>
+
+<!-- Horizontal line that should intersect the panels -->
+<div class="line horizontal"></div>
+
+<div class="container">
+    <div class="panel">
+        <div class="circle">
+            <div class="perc" style="left: 20px;">3%
+            </div>
+        </div>
+        <div class="tag"><p style="font-family: copperplate;font-size: 40px;position: relative;top: 8px;left: 65px;">Risers</p></div>
+    </div>
+    <div class="panel">
+        <div class="circle">
+            <div class="perc" style="left: 20px;">1%
+            </div>
+        </div>
+        <div class="tag"><p style="font-family: copperplate;font-size: 40px;position: relative;top: 8px;left: 65px;">Beginners</p></div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.panel').forEach(panel => {
+        panel.addEventListener('click', () => {
+            panel.classList.toggle('flipped');
+        });
+    });
+</script>
+
+<!-- Vertical line that should intersect the panels -->
+
+
+
+
+
+
+</body>
+
+
+
+</html>
